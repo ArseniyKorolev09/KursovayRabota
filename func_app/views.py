@@ -11,4 +11,4 @@ def give_predictions(request, days_num):
         }
         return render(request, 'index.html', context)
     else:
-        return HttpResponse("error: to many days no over 15")
+        return HttpResponse("error: to many days")

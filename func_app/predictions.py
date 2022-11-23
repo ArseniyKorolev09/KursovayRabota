@@ -1,6 +1,8 @@
 from func_app.interval import API_KEY, FIRST_RES
 from scipy.interpolate import UnivariateSpline
 import json
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn
 import datetime
@@ -17,9 +19,6 @@ def inf_graf_date():
     q += "base=BYN&"
     q += "symbols=RUB&"
     q += f"apikey={API_KEY}"
-    # response = requests.get(query)
-    # print("\n\n", response.text, "\n\n", sep="")
-    # return response.text
     return FIRST_RES
 
 

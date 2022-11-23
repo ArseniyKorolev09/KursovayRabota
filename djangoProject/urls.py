@@ -17,7 +17,10 @@ from django.urls import path
 from func_app.views import give_predictions
 from django.conf import settings
 from django.conf.urls.static import static
+from api import views
+
 
 urlpatterns = [
- path('<int:days_num>', give_predictions)
+ path('<int:days_num>', give_predictions),
+ path('api', views.predictions_Views.as_view())
 ]
