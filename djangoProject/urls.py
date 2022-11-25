@@ -18,9 +18,12 @@ from func_app.views import give_predictions
 from django.conf import settings
 from django.conf.urls.static import static
 from api import views
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 
 urlpatterns = [
  path('<int:days_num>', give_predictions),
- path('api', views.predictions_Views.as_view())
+ path('api', views.predictions_Views.as_view()),
+ path("schema/", SpectacularAPIView.as_view(), name="schema"),
+ path("docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui")
 ]
